@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIDIANE PRO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="app-title">TIDIANE PRO</h1>
+            <div class="header-controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Changer le thème">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                    </svg>
+                </button>
+                <select id="language-selector" class="language-selector">
+                    <option value="fr">FR</option>
+                    <option value="ar">AR</option>
+                    <option value="en">EN</option>
+                    <option value="wo">WO</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Accueil -->
+        <section id="home" class="page active">
+            <div class="page-header">
+                <h2>Accueil</h2>
+            </div>
+            <div class="page-content">
+                <div class="card">
+                    <h3>Citation du Jour</h3>
+                    <p class="quote">"La meilleure des œuvres est celle qui est accomplie avec sincérité et conformément à la Sunna."</p>
+                    <p class="author">- Cheikh Ahmed Tijâni</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Rappel Spirituel</h3>
+                    <p>Le dhikr est la nourriture de l'âme. Pratiquez-le avec constance et ferveur.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Verset du Coran</h3>
+                    <p class="arabic-text">إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا</p>
+                    <p>"Certes, la prière est pour les croyants une prescription à des temps déterminés."</p>
+                    <p class="reference">(Sourate An-Nisa, verset 103)</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Actualités de la Communauté</h3>
+                    <ul class="news-list">
+                        <li>Gamou annuel à Tivaouane - 18-20 Octobre 2023</li>
+                        <li>Nouvelle mosquée tidiane inaugurée à Dakar</li>
+                        <li>Conférence sur la Tariqa Tidjaniya à Kaolack</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Prière -->
+        <section id="prayer" class="page">
+            <div class="page-header">
+                <h2>Prière</h2>
+            </div>
+            <div class="page-content">
+                <div class="card">
+                    <h3>Horaires de Prière</h3>
+                    <div class="prayer-times">
+                        <div class="prayer-item">
+                            <span class="prayer-name">Fajr</span>
+                            <span class="prayer-time">05:30</span>
+                        </div>
+                        <div class="prayer-item">
+                            <span class="prayer-name">Dhuhr</span>
+                            <span class="prayer-time">13:15</span>
+                        </div>
+                        <div class="prayer-item">
+                            <span class="prayer-name">Asr</span>
+                            <span class="prayer-time">16:45</span>
+                        </div>
+                        <div class="prayer-item">
+                            <span class="prayer-name">Maghrib</span>
+                            <span class="prayer-time">19:20</span>
+                        </div>
+                        <div class="prayer-item">
+                            <span class="prayer-name">Isha</span>
+                            <span class="prayer-time">20:45</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="update-location">Mettre à jour la localisation</button>
+                </div>
+                
+                <div class="card">
+                    <h3>Direction de la Qibla</h3>
+                    <div class="qibla-container">
+                        <div class="compass">
+                            <div class="compass-needle"></div>
+                        </div>
+                        <p class="qibla-direction">Direction: 68° Nord-Est</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Calendrier Hijri</h3>
+                    <div class="hijri-date">
+                        <p>Aujourd'hui: <span id="hijri-today">15 Rabi' al-Awwal 1445</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Wird & Douas -->
+        <section id="wird" class="page">
+            <div class="page-header">
+                <h2>Wird & Douas</h2>
+            </div>
+            <div class="page-content">
+                <div class="card">
+                    <h3>Wird Tidiane</h3>
+                    <p>Récitation quotidienne du wird de la Tariqa Tidjaniya</p>
+                    <button class="btn-primary">Commencer la récitation</button>
+                </div>
+                
+                <div class="card">
+                    <h3>Jawharatoul Kamal</h3>
+                    <div class="counter-container">
+                        <div class="counter-display">
+                            <span id="jawhara-count">0</span>
+                        </div>
+                        <div class="counter-controls">
+                            <button class="btn-counter" id="decrease-jawhara">-</button>
+                            <button class="btn-counter" id="increase-jawhara">+</button>
+                            <button class="btn-counter" id="reset-jawhara">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Hizbou Bahr</h3>
+                    <p>Récitation du Hizbou Bahr pour la protection et les bénédictions</p>
+                    <button class="btn-primary">Lire Hizbou Bahr</button>
+                </div>
+                
+                <div class="card">
+                    <h3>Salatoul Fâtih</h3>
+                    <p>Récitation de la Salatoul Fâtih, prière sur le Prophète (PSL)</p>
+                    <div class="counter-container">
+                        <div class="counter-display">
+                            <span id="salat-count">0</span>
+                        </div>
+                        <div class="counter-controls">
+                            <button class="btn-counter" id="decrease-salat">-</button>
+                            <button class="btn-counter" id="increase-salat">+</button>
+                            <button class="btn-counter" id="reset-salat">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Médias -->
+        <section id="media" class="page">
+            <div class="page-header">
+                <h2>Médias</h2>
+            </div>
+            <div class="page-content">
+                <div class="card">
+                    <h3>Audios Spirituels</h3>
+                    <div class="media-list">
+                        <div class="media-item">
+                            <div class="media-icon">🎵</div>
+                            <div class="media-info">
+                                <h4>Wird Tidiane (Audio)</h4>
+                                <p>Récitation complète du wird</p>
+                            </div>
+                            <button class="btn-play">Écouter</button>
+                        </div>
+                        <div class="media-item">
+                            <div class="media-icon">🎵</div>
+                            <div class="media-info">
+                                <h4>Jawharatoul Kamal</h4>
+                                <p>Récitation de la perle de la perfection</p>
+                            </div>
+                            <button class="btn-play">Écouter</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Vidéos Éducatives</h3>
+                    <div class="media-list">
+                        <div class="media-item">
+                            <div class="media-icon">🎬</div>
+                            <div class="media-info">
+                                <h4>Biographie de Cheikh Tijâni</h4>
+                                <p>Documentaire sur la vie du Cheikh</p>
+                            </div>
+                            <button class="btn-play">Regarder</button>
+                        </div>
+                        <div class="media-item">
+                            <div class="media-icon">🎬</div>
+                            <div class="media-info">
+                                <h4>Enseignements Tidiane</h4>
+                                <p>Conférences sur la Tariqa</p>
+                            </div>
+                            <button class="btn-play">Regarder</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Qasidas</h3>
+                    <div class="media-list">
+                        <div class="media-item">
+                            <div class="media-icon">📖</div>
+                            <div class="media-info">
+                                <h4>Qasida en l'honneur du Prophète</h4>
+                                <p>Poésie spirituelle</p>
+                            </div>
+                            <button class="btn-play">Lire</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Documents PDF</h3>
+                    <div class="media-list">
+                        <div class="media-item">
+                            <div class="media-icon">📄</div>
+                            <div class="media-info">
+                                <h4>Livre des Invocations</h4>
+                                <p>Collection de douas et wirds</p>
+                            </div>
+                            <button class="btn-download">Télécharger</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Communauté -->
+        <section id="community" class="page">
+            <div class="page-header">
+                <h2>Communauté</h2>
+            </div>
+            <div class="page-content">
+                <div class="card">
+                    <h3>Événements à Venir</h3>
+                    <div class="events-list">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="event-day">18</span>
+                                <span class="event-month">Oct</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Gamou de Tivaouane</h4>
+                                <p>Célébration annuelle de la naissance du Prophète (PSL)</p>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="event-day">12</span>
+                                <span class="event-month">Nov</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Ziarra à Médina Baye</h4>
+                                <p>Pèlerinage spirituel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Mosquées Tidianes</h3>
+                    <div class="mosques-list">
+                        <div class="mosque-item">
+                            <h4>Mosquée de Tivaouane</h4>
+                            <p>Siège de la confrérie Tidiane au Sénégal</p>
+                        </div>
+                        <div class="mosque-item">
+                            <h4>Mosquée de Kaolack</h4>
+                            <p>Centre de la branche Niassène</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Chat Communautaire</h3>
+                    <div class="chat-container">
+                        <div class="chat-messages">
+                            <div class="message received">
+                                <p>Salam alaykoum, y a-t-il un rappel pour aujourd'hui ?</p>
+                                <span class="message-time">10:30</span>
+                            </div>
+                            <div class="message sent">
+                                <p>Wa alaykoum salam, oui le rappel est sur la patience.</p>
+                                <span class="message-time">10:32</span>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="Tapez votre message...">
+                            <button class="btn-send">Envoyer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Paramètres -->
+        <section id="settings" class="page">
+            <div class="page-header">
+                <h2>Paramètres</h2>
+            </div>
+            <div class="page-content">
+                <div class="card">
+                    <h3>Profil Utilisateur</h3>
+                    <div class="profile-section">
+                        <div class="profile-avatar">
+                            <div class="avatar-placeholder">UT</div>
+                        </div>
+                        <div class="profile-info">
+                            <h4>Utilisateur Tidiane</h4>
+                            <p>Membre depuis: Jan 2023</p>
+                        </div>
+                    </div>
+                    <button class="btn-primary">Modifier le profil</button>
+                </div>
+                
+                <div class="card">
+                    <h3>Préférences de Langue</h3>
+                    <div class="setting-item">
+                        <label for="app-language">Langue de l'application:</label>
+                        <select id="app-language">
+                            <option value="fr">Français</option>
+                            <option value="ar">Arabe</option>
+                            <option value="en">Anglais</option>
+                            <option value="wo">Wolof</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Notifications</h3>
+                    <div class="setting-item">
+                        <label class="toggle-label">
+                            <span>Notifications de prière</span>
+                            <input type="checkbox" id="prayer-notifications" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label class="toggle-label">
+                            <span>Rappels spirituels</span>
+                            <input type="checkbox" id="spiritual-reminders" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Apparence</h3>
+                    <div class="setting-item">
+                        <label class="toggle-label">
+                            <span>Mode sombre</span>
+                            <input type="checkbox" id="dark-mode">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>À propos</h3>
+                    <p>TIDIANE PRO v1.0</p>
+                    <p>Application spirituelle pour la communauté Tidiane</p>
+                    <button class="btn-secondary">Conditions d'utilisation</button>
+                    <button class="btn-secondary">Politique de confidentialité</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-page="home">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Accueil</span>
+        </button>
+        <button class="nav-item" data-page="prayer">
+            <span class="nav-icon">🕌</span>
+            <span class="nav-label">Prière</span>
+        </button>
+        <button class="nav-item" data-page="wird">
+            <span class="nav-icon">📿</span>
+            <span class="nav-label">Wird</span>
+        </button>
+        <button class="nav-item" data-page="media">
+            <span class="nav-icon">🎵</span>
+            <span class="nav-label">Médias</span>
+        </button>
+        <button class="nav-item" data-page="community">
+            <span class="nav-icon">👥</span>
+            <span class="nav-label">Communauté</span>
+        </button>
+        <button class="nav-item" data-page="settings">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Paramètres</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
